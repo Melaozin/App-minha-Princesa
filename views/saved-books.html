@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livros Salvos</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Livros Salvos</h1>
+    <div id="saved-books"></div>
+
+    <script>
+      async function fetchSavedBooks() {
+        const response = await fetch("/saved-books");
+        const books = await response.json();
+
+        const savedBooksDiv = document.getElementById("saved-books");
+        savedBooksDiv.innerHTML = "";
+
+        books.forEach((book) => {
+          const bookItem = document.createElement("div");
+          bookItem.classList.add("book-item");
+
+          bookItem.innerHTML = `
+                    <p>${book}</p>
+                    <a href="../saved-books/${encodeURIComponent(
+                      book
+                    )}" target="_blank">Abrir</a>
+                `;
+
+          savedBooksDiv.appendChild(bookItem);
+        });
+      }
+
+      fetchSavedBooks();
+    </script>
+  </body>
+</html>

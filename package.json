@@ -1,0 +1,13 @@
+{
+  "name": "livros-api",
+  "version": "1.0.0",
+  "description": "Projeto para buscar e salvar livros usando a Google Books API.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "axios": "^0.21.1"
+  }
+}
