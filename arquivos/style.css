@@ -9,11 +9,15 @@
 }
 
 .header {
-  border: solid 1px red;
   width: 100%;
-  height: 10vh;
+  height: auto;
   text-align: center;
-  padding: 5px;
+  padding: 7px 5px;
+  border-bottom: solid 27px;
+  border-image-source: url("borda.png");
+  border-image-slice: 100;
+  border-image-width: 1;
+  border-image-repeat: stretch;
 }
 
 .header h1 {
@@ -27,23 +31,44 @@
 .header input {
   border: 1px solid black;
   border-radius: 7px;
+  padding: 5px; /* Adicionado padding para melhor usabilidade */
+  width: 200px; /* Sugestão de largura fixa */
 }
 
 #bookResults {
   flex: 1 0 auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 15px; /* Aumentado de 3px para 15px para melhor espaçamento */
   justify-content: center;
   align-content: center;
   margin-top: 15px;
+  padding: 20px; /* Adicionado padding para não colar nos limites */
+  background-image: linear-gradient(
+    to bottom,
+    #008388,
+    #0086a9,
+    #0086cf,
+    #0080f0,
+    #006fff,
+    #4262ff,
+    #684fff,
+    #8a32ff,
+    #872fff,
+    #852dff,
+    #822aff,
+    #7f27ff
+  );
 }
 
 .container {
   border: solid 1px red;
   flex-basis: 30%;
   max-height: 300px;
-  font-size: 7px;
+  font-size: 12px; /* Aumentado de 7px para 12px para melhor legibilidade */
+  background-color: white; /* Adicionado para contrastar com o fundo gradiente */
+  padding: 10px; /* Adicionado padding interno */
+  border-radius: 8px; /* Adicionado borda arredondada */
 }
 
 .container span {
